@@ -1,0 +1,7 @@
+*.pyc
+data/
+output/
+output_*/
+tmp/
+models/
+couplet/
