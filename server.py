@@ -20,7 +20,7 @@ m = Model(
         restore_model=True, init_train=False, init_infer=True)
 
 
-@app.route('/chat/couplet/<in_str>')
+@app.route('/<in_str>')
 def chat_couplet(in_str):
     if len(in_str) == 0 or len(in_str) > 50:
         output = u'您的输入太长了'
@@ -31,5 +31,5 @@ def chat_couplet(in_str):
     return jsonify({'下联': output})
 
 
-http_server = WSGIServer(('', 5000), app)
+http_server = WSGIServer(('127.0.0.1', 5000), app)
 http_server.serve_forever()

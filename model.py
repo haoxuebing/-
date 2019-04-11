@@ -5,7 +5,7 @@ import bleu
 import reader
 from os import path
 import random
-
+import time
 
 class Model():
 
@@ -155,6 +155,7 @@ class Model():
                     self.train_saver.save(self.train_session, self.model_file)
                     print("Saving model. Step: %d, loss: %f" % (step,
                                                                 total_loss / self.save_step))
+                    print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))                    
                     # print sample output
                     sid = random.randint(0, self.batch_size-1)
                     input_text = reader.decode_text(in_seq[sid],

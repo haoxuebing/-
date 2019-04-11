@@ -10,6 +10,6 @@ m = Model(
         num_units=1024, layers=4, dropout=0.2,
         batch_size=32, learning_rate=0.001,
         output_dir='./models/tf-lib/output_couplet',
-        restore_model=False)
+        restore_model=True)
 
-m.train(5000000)
+m.train(770491, start=213300)
